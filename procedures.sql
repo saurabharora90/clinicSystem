@@ -26,13 +26,16 @@ END
 CREATE PROCEDURE Patients_Seen
 @doctor_id CHAR (9), @StartDate DATETIME=NULL, @EndDate DATETIME=NULL OUTPUT
 AS
+ 
 if(@StartDate IS NULL)
 BEGIN
 SET @StartDate = GETDATE();
 END
+ 
 SET @EndDate = DATEADD(day,1,@startDate);
+ 
 BEGIN
 SELECT *
 FROM vw_Doctor_Patient
-WHERE doctor = @doctor_id AND datetime BETWEEN CONVERT (date, @StartDate AND CONVERT (date, @EndDate)
+WHERE doctor = @doctor_id AND datetime BETWEEN CONVERT (date, @StartDate) AND CONVERT (date, @EndDate)
 END
