@@ -10,6 +10,9 @@
 
    sqlsrv_configure('WarningsReturnAsErrors', 0);
    $conn = sqlsrv_connect( $serverName, $connectionInfo);
+   
+   //If you want to connect to a local SQL Server database
+   //$conn = sqlsrv_connect( '(localdb)\v11.0', array( 'Database'=>'clinicSystem'));
    if($conn === false)
    {
      FatalError("Failed to connect...");
