@@ -1,6 +1,6 @@
 <?php
      require_once("../includes/connection.php");
-     //include("../sessionPatient.php");
+     include("../sessionPatient.php");
      include("../includes/functions.php");
      if(!isset($_SESSION['id_number']))
         redirect_to("../index.php");
